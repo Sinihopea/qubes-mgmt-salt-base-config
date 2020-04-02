@@ -1,20 +1,19 @@
 
-Name:      qubes-mgmt-salt-base-config
-Version:   @VERSION@
-Release:   1%{?dist}
-Summary:   Qubes+Salt Management base configuration for SaltStack's Salt Infrastructure automation and management system
-License:   GPL 2.0
-URL:	   http://www.qubes-os.org/
+Name:       qubes-mgmt-salt-base-config
+Version:    @VERSION@
+Release:    1%{?dist}
+Summary:    Qubes+Salt Management base configuration for SaltStack's Salt Infrastructure automation and management system
+License:    GPL 2.0
+URL:        http://www.qubes-os.org/
 
-Group:     System administration tools
-BuildArch: noarch
-Requires:  salt
-Requires:  salt-minion
-Requires:  qubes-mgmt-salt-config
-Requires:  qubes-mgmt-salt-base-topd
+Group:      System administration tools
+BuildArch:  noarch
+Requires:   salt
+Requires:   salt-minion
+Requires:   qubes-mgmt-salt-config
+Requires:   qubes-mgmt-salt-base-topd
 
-
-Source0: %{name}-%{version}.tar.gz
+Source0:    %{name}-%{version}.tar.gz
 
 %description
 Qubes+Salt Management base configuration for SaltStack's Salt Infrastructure
@@ -30,7 +29,7 @@ make install DESTDIR=%{buildroot} LIBDIR=%{_libdir} BINDIR=%{_bindir} SBINDIR=%{
 
 %post
 
-# disable formula which used to be in this package
+# Disable formula which used to be in this package
 rm -f /srv/salt/_tops/base/config.top
 rm -f /srv/pillar/_tops/base/config.top
 rm -f /srv/pillar/_tops/base/config.modules.top
